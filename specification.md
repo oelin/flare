@@ -10,7 +10,7 @@ Flare is a simple file format for streaming large datasets over HTTP(s). It rese
 
 A Flare file MUST be a *valid*, UTF-8 encoded YAML file with the following structure:
 
-```
+```yaml
 <Stream 0 Name>:
     headers:
         ...
@@ -32,10 +32,11 @@ where:
 
 * Stream names MUST be unique.
 * Chunk URLs SHOULD be unique.
+* Chunk URLs SHOULD use the HTTP(s) scheme.
 * `headers` MUST be an object.  
 * `content` MUST be an array of URLs, as descrbed in [RFC-1738](https://www.rfc-editor.org/rfc/rfc1738).
 
 
 ## Semantics
 
-Each stream in a Flare file SHOULD be independent of all other streams, such that stream chunks can be downloaded without observing the name, `headers` or `content` of other streams. 
+Each stream in a Flare file SHOULD be independent of all other streams. This means its chunks can be downloaded without information provided by any other streams.
