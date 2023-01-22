@@ -60,4 +60,4 @@ Flare is a simple, flexible format for streaming big datasets to limited devices
 ## Resources
 
 * [Flare Python](https://github.com/oelin/flare-python) - a reference client implementation in Python.
-* [Tundra](https://github.com/oelin/tundra) - PyTorch APIs over Flare Python.
+* [Tundra](https://github.com/oelin/tundra) - PyTorch APIs over Flare.
