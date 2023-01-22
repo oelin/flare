@@ -46,7 +46,7 @@ A playlist consists of one or more *streams*. Streams typically encompas a singl
 
 ### Headers
 
-Stream headers are used to communicate metadata about a stream to clients. For example, they may indicate how stream chunks have been encoded or provide a natural language description of the stream. While stream headers are completely arbitrary, we recommend following the conventions described [here](https://github.com/oelin/flare-guidelines#stream-headers).
+Stream headers are used to communicate metadata about a stream to clients. For example, they may indicate how stream chunks have been encoded or provide a natural language description of the stream. While stream headers are completely arbitrary, we recommend following the guidelines described [here](https://github.com/oelin/flare-guidelines#stream-headers).
 
 
 ### Content
