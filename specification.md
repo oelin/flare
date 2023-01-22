@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Flare is a simple file format for streaming large datasets over HTTP(s). It resembles M3U and PLS formats, whereby a lightweight playlist file is downloaded in order to obtain URLs pointing to several stream chunks. The client downloads said chunks as needed.
+Flare is a simple file format for streaming large datasets over HTTP(s). It resembles M3U and PLS, whereby a lightweight playlist file is downloaded to learn the locations of stream chunks.
 
 
 ## Syntax
@@ -32,11 +32,14 @@ where:
 
 * Stream names MUST be unique.
 * Chunk URLs SHOULD be unique.
+* Chunk URLs SHOULD conform to [RFC-1738](https://www.rfc-editor.org/rfc/rfc1738).
 * Chunk URLs SHOULD use the HTTP(s) scheme.
-* `headers` MUST be an object.  
-* `content` MUST be an array of URLs, as descrbed in [RFC-1738](https://www.rfc-editor.org/rfc/rfc1738).
 
 
 ## Semantics
 
-Each stream in a Flare file SHOULD be independent of all other streams. This means its chunks can be downloaded without information provided by any other streams.
+Each stream in SHOULD be independent such that its chunks can be downloaded without reference to any other stream.
+
+Each stream chunk MUST be independent such that it can be downloaded without reference to any other chunk.
+
+Stream headers are arbitrary objects. Their semantics SHOULD be decided by the client.
