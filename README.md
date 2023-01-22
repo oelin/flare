@@ -3,7 +3,7 @@
 </div>
 
 
-# Flare: Flexible, streamed access to big datasets 🔥
+# Flare: Flexible, streamed access to big datasets
 
 Flare provides streamed access to big datasets by partitioning them into bite-sized chunks which can be read asynchronously. The locations of stream chunks are held in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can be read without loading the whole file into memory 🥳👌.
 
