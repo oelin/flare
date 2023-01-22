@@ -41,12 +41,12 @@ At the core of Flare, are *playlists*. These are lightweight YAML files which st
      
 ### Streams
 
-A playlist consists of one or more *streams*. Streams are typically used to encompas a single *variable* or *object* within a dataset - for example in a supervised learning dataset, one stream may be used for inputs while another is used for labels. Streams have a name, headers and content, which are described below.
+A playlist consists of one or more *streams*. Streams typically encompas a single object within a dataset - for example in a supervised learning dataset, one stream might be used to store inputs while another is used to store labels.
 
 
 ### Headers
 
-Stream headers are used to communicate metadata about a stream towards client applications. For example, they may indicate how stream chunks have been encoded or provide a natural language description of the stream. While these headers can be completely arbitrary, we recommend following the conventions described [here](https://github.com/oelin/flare-guidelines#stream-headers).
+Stream headers are used to communicate metadata about a stream to clients. For example, they may indicate how stream chunks have been encoded or provide a natural language description of the stream. While stream headers are completely arbitrary, we recommend following the conventions described [here](https://github.com/oelin/flare-guidelines#stream-headers).
 
 
 ### Content
