@@ -56,7 +56,7 @@ Streams also contain an array of chunk URLs which denote where each chunk can be
 
 ## Conclusion
 
-Flare is a simple protocol for streaming large datasets over HTTPS. We hope that it allows big data to be shared more easily between ordinary internet users.
+Flare is a simple protocol for streaming large datasets over HTTPS. We hope that it makes sharing big data less of a hassle for ordinary internet users.
 
 
 ## Resources
