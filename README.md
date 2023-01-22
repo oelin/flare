@@ -5,17 +5,17 @@
 
 # Flare: Flexible, streamed access to big datasets 🔥
 
-Flare provides streamed access to big datasets by partitioning them into bite-sized chunks that can be read asynchronously. The locations of individual chunks are stored in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can be read without loading the whole file into memory.
+Flare provides streamed access to big datasets by partitioning them into bite-sized chunks which can be read asynchronously. The locations of stream chunks are held in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can be read without loading the whole file into memory 🥳👌.
 
 
-## Overview
+## Introduction
 
-Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)) to simplify access to vast amounts of data on limited devices. The chunk abstraction allows applications to download only those portions of a dataset which they require *at runtime* and minimize unneccessary memory usage. The [Python reference implementation](https://github.com/oelin/flare-python) further makes use of layered LRU caching to minimize latency when reading chunks and allow prevent exhaustion of storage space.
+Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)) to simplify access to vast amounts of data on limited devices. The chunk abstraction allows applications to download only those portions of a dataset which they require *at runtime* and minimize unneccessary memory usage. Many [client implementations](https://github.com/oelin/flare-python) further makes use of layered LRU caching to minimize read latency and prevent storage space exhaustion.
 
 
-### Playlists
+## Playlists
 
-At the core of Flare, are *playlists*. These are lightweight YAML files which store the locations of individual chunks. Playlists have the following structure:
+At the core of Flare, are *playlists*. These are lightweight YAML files which hold the locations of stream chunks and other metadata. Playlists have the following structure:
 
 ```yaml
 <Stream 0 Name>:
@@ -36,4 +36,34 @@ At the core of Flare, are *playlists*. These are lightweight YAML files which st
 ...
 ```
 
-A playlist is an array of streams. Streams are typically used to store distinct objects within a dataset, such as inputs or labels. Each stream has a name, headers and content. The stream headers are intended to communicate metadata about the stream such as encoding options. There are no standards about what must be specified here and they may be empty. The content of a stream is an array of chunk URLs. Each URL should typically use HTTPs, however some specific applications may use alterantive schemes.
+     
+### Streams
+
+A playlist consists of one or more *streams*. Streams are typically used to encompas a single *variable* or *object* within a dataset - for example in a supervised learning dataset, one stream may be used for inputs while another is used for labels. Streams have a name, headers and content, which are described below.
+
+
+#### Headers
+
+Stream headers are used to communicate metadata about a stream towards client applications. For example, they may indicate how stream chunks have been encoded or provide a natural language description of the stream. While these headers can be completely arbitrary, we recommend following the conventions described [here](https://github.com/oelin/flare-guidelines#stream-headers).
+
+
+#### Content
+
+Streams also contain an array of chunk URLs which denote where each chunk can be downloaded from.
+
+
+## Conclusion
+
+Flare is a simple, flexible format for streaming big datasets to limited devices. Our hope is that it positively contributes to the democratization of big data. 
+
+---
+
+### Documentation
+
+* [Flare specification](https://github.com/oelin/flare/specification.txt)
+* [Flare guidelines](https://github.com/oelin/flare-guidelines)
+
+### Clients
+
+* [Flare Python](https://github.com/oelin/flare-python)
+* [Tundra - PyTorch APIs for Flare](https://github.com/oelin/tundra)
