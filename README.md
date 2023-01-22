@@ -61,5 +61,6 @@ Flare is a simple protocol for streaming large datasets over HTTPS. We hope that
 
 ## Resources
 
+* [Flare Specification](https://github.com/oelin/flare-specification) - A basic specification for Flare.
 * [Flare Python](https://github.com/oelin/flare-python) - A reference Flare client written in Python.
 * [Tundra](https://github.com/oelin/tundra) - PyTorch + Flare.
