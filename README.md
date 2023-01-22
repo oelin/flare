@@ -1,3 +1,3 @@
-# Flare: An elegant file format for streamed access to big datasets
+# Flare: An elegant file format for random access to big datasets
 
 
