@@ -10,7 +10,7 @@ Flare provides streamed access to big datasets by partitioning them into bite-si
 
 ## Introduction
 
-Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)) to simplify access to vast amounts of data on limited devices. The chunk abstraction allows applications to download only those portions of a dataset which they require *at runtime* and minimize unneccessary memory usage. Many [client implementations](https://github.com/oelin/flare-python) further makes use of layered LRU caching to minimize read latency and prevent storage space exhaustion.
+Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)) to simplify access to vast amounts of data on limited devices. The chunk abstraction allows applications to download only those portions of a dataset which they require *at runtime* and minimize unneccessary memory usage. Many client implementations further makes use of layered LRU caching to minimize read latency and prevent storage space exhaustion.
 
 
 ## Playlists
@@ -54,16 +54,10 @@ Streams also contain an array of chunk URLs which denote where each chunk can be
 
 ## Conclusion
 
-Flare is a simple, flexible format for streaming big datasets to limited devices. Our hope is that it positively contributes to the democratization of big data. 
+Flare is a simple, flexible format for streaming big datasets to limited devices. Our hope is that it positively contributes to the democratization of big data.
 
----
 
-### Documentation
+## Resources
 
-* [Flare specification](https://github.com/oelin/flare/specification.txt)
-* [Flare guidelines](https://github.com/oelin/flare-guidelines)
-
-### Clients
-
-* [Flare Python](https://github.com/oelin/flare-python)
-* [Tundra - PyTorch APIs for Flare](https://github.com/oelin/tundra)
+* [Flare Python](https://github.com/oelin/flare-python) - a reference client implementation in Python.
+* [Tundra](https://github.com/oelin/tundra) - PyTorch APIs over Flare Python.
