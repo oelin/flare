@@ -5,12 +5,14 @@
 
 # Flare: Progressive streaming of large datasets
 
-Flare is a tiny protocol for streaming large datasets over HTTPS. It works by partitioning datasets into bite-sized chunks which can then be read asynchronously. The locations of individual chunks are stored in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can be read without loading the whole file into memory 🥳👌.
+Flare is a tiny protocol for streaming large datasets over HTTPS. It works by partitioning datasets into small chunks which can be downloaded asynchronously. The locations of individual chunks are held in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can then be read without loading the whole file into memory 🥳👌.
 
 
 ## Introduction
 
-Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)) to simplify access to vast amounts of data on limited devices. The chunk abstraction allows applications to download only those portions of a dataset which they require *at runtime* and minimize unneccessary memory usage. Many client implementations further makes use of layered LRU caching to minimize read latency and prevent storage space exhaustion.
+Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)), in which a single stream is divided into several chunks. This allows applications to download only those pieces of data which they require *at runtime* and minimize unneccessary memory usage. It also allows streams to be hosted on multiple servers for improved load balancing and locale-aware distribution.
+
+Flare essentially brings these ideas to the data science domain.
 
 
 ## Playlists
