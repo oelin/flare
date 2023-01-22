@@ -10,9 +10,9 @@ Flare is a simple protocol for streaming large datasets over HTTPS. It revolves 
 
 ## Introduction
 
-Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)), which split a single stream into several chunks; allowing applications to download only the parts they need. It also allows streams to be hosted on multiple servers for improved load balancing and locale-aware distribution (i.e. CDNs).
+Flare takes inspiration from multimedia streaming formats such as [M3U](https://en.wikipedia.org/wiki/M3U) and [PLS](https://en.wikipedia.org/wiki/PLS_(file_format)), which split a single stream into several chunks; allowing applications to download only the parts they need. Chunking also allows streams to be hosted on multiple servers for greater redundancy, storage capacity, and download rates (i.e. CDNs). 
 
-Flare brings these ideas to the data science domain.
+Flare aims to bring these benifits to the data science domain.
 
 
 ## Playlists
