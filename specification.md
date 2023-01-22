@@ -1,14 +1,10 @@
-# Flare Specification Version 1.0.0
+# Flare Specification 1.0.0
 
+## 1. Playlists
 
-## Introduction
+### 1.1. Syntax
 
-Flare is a simple file format for streaming large datasets over HTTP(s). It resembles M3U and PLS, whereby a lightweight playlist file is downloaded to learn the locations of stream chunks.
-
-
-## Syntax
-
-A Flare file MUST be a *valid*, UTF-8 encoded YAML file with the following structure:
+A Flare playlist MUST be a *valid*, UTF-8 encoded YAML file with the following structure:
 
 ```yaml
 <Stream 0 Name>:
@@ -36,7 +32,7 @@ where:
 * Chunk URLs SHOULD use the HTTP(s) scheme.
 
 
-## Semantics
+### 1.2. Semantics
 
 Each stream in SHOULD be independent such that its chunks can be downloaded without reference to any other stream.
 
