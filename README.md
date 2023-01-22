@@ -3,9 +3,9 @@
 </div>
 
 
-# Flare: Flexible, streamed access to big data
+# Flare: Progressive streaming of large datasets
 
-Flare supports streamed access to big data by partitioning datasets into bite-sized chunks which can be read asynchronously. The locations of stream chunks are stored in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can be read without loading the whole file into memory 🥳👌.
+Flare is a tiny protocol for streaming large datasets over HTTPS. It works by partitioning datasets into bite-sized chunks which can then be read asynchronously. The locations of individual chunks are stored in lightweight YAML files called *playlists*. Given a playlist, any portion of a dataset can be read without loading the whole file into memory 🥳👌.
 
 
 ## Introduction
